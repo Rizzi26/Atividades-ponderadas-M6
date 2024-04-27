@@ -12,7 +12,7 @@
 
 4 - Agora com a tela da tartaruga iniciada, podemos rodar no primeiro terminal que instanciamos o nosso pacote da ponderada. Digite o seguinte comando na pasta raiz do projeto: <b>ros2 run ponderada_s2 ponderada_pub</b>
 
-# O programa deve executar da seguinte forma e a tartaruga deve fazer o seguinte desenho:
+# Assista o vídeo abaixo, o programa deve ser executado da seguinte forma e a tartaruga deve fazer o seguinte desenho:
 
 [![Watch the video](https://davesroboshack.com/wp-content/uploads/2022/11/01_turtlesim-1024x638.png)](https://www.youtube.com/watch?v=4sZb-4vxiIw)
 
