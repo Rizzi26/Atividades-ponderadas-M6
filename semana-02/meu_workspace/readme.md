@@ -1,6 +1,6 @@
 # Atividade Turltle draw ROS:
 
-&emsp;Para conseguir rodar a minha atividade em seu computador é necessário seguir as intruções a seguir:
+## Para conseguir rodar a minha atividade em seu computador é necessário seguir as intruções a seguir:
 
 1 - Clone meu repositório em sua máquina, abra um terminal e navegue até onde gostaria de clonar o repositório, digite <b>git clone https://github.com/Rizzi26/Atividades-ponderadas-M6</b>
 
@@ -22,27 +22,27 @@
   <img src="\img\entry-points.png">
 </div>
 
-&emsp;Código que executa o publisher e envia os comandos para o turtlesim:
+# Código que executa o publisher e envia os comandos para o turtlesim:
 
-# 1- função que inicializa o nó:
+## 1- função que inicializa o nó:
 
 <div align="center">
   <img src="\img\init.png">
 </div>
 
-# 2- Função que desenha uma reta:
+## 2- Função que desenha uma reta:
 
 <div align="center">
   <img src="\img\straight.png">
 </div>
 
-# 3- Função que faz uma curva:
+## 3- Função que faz uma curva:
 
 <div align="center">
   <img src="\img\curve.png">
 </div>
 
-# 4- Função que publica os dados para o turtle:
+## 4- Função que publica os dados para o turtle:
 
 <div align="center">
   <img src="\img\callback.png">
