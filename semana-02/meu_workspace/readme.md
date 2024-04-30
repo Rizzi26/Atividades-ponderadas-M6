@@ -30,7 +30,7 @@
 - SetPen
 
 <div align="center">
-  <img src="\img\init.png">
+  <img src="\img\serviços.png">
 </div>
 
 ## 1- função que inicializa o nó:
@@ -54,7 +54,7 @@
 ## 4- Função que publica os dados para o turtle:
 
 <div align="center">
-  <img src="\img\callback.png">
+  <img src="\img\callback2.png">
 </div>
 
 
