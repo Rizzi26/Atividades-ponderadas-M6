@@ -14,7 +14,7 @@
 
 # Assista o vídeo abaixo, o programa deve ser executado da seguinte forma e a tartaruga deve fazer o seguinte desenho:
 
-[![Watch the video](https://davesroboshack.com/wp-content/uploads/2022/11/01_turtlesim-1024x638.png)](https://www.youtube.com/watch?v=4sZb-4vxiIw)
+[![Watch the video](https://davesroboshack.com/wp-content/uploads/2022/11/01_turtlesim-1024x638.png)](https://youtu.be/oIXDkfXu6jc)
 
 # Configuração dos entry-points:
 
