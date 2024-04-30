@@ -4,7 +4,7 @@
 
 1 - Clone meu repositório em sua máquina, abra um terminal e navegue até onde gostaria de clonar o repositório, digite <b>git clone https://github.com/Rizzi26/Atividades-ponderadas-M6</b>
 
-2 - Com o terminal aberto em sua máquina navegue até onde foi clonado o meu repositório e na pasta raiz --> /semana-02/meu_workspace digite: <b>colcon build</b>
+2 - Com o terminal aberto em sua máquina navegue até onde foi clonado o meu repositório e na pasta raiz --> Atividades-ponderadas-M6/semana-02/meu_workspace digite: <b>colcon build</b>
 
 &emsp;Esse comando irá instalar as dependências necessárias para rodar o meu pacote com o ROS <b>(pastas: build, log e install)</b>
 
@@ -23,6 +23,15 @@
 </div>
 
 # Código que executa o publisher e envia os comandos para o turtlesim:
+
+## Serviços utilizados na ponderada:
+- Spawn
+- Kill
+- SetPen
+
+<div align="center">
+  <img src="\img\init.png">
+</div>
 
 ## 1- função que inicializa o nó:
 
