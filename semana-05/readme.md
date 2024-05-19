@@ -8,6 +8,7 @@
   - [Class TurtleBot: Interação com o robô](#class-turtlebot-interação-com-o-robô)
   - [Execução do pacote](#execução-do-pacote)
   - [Função inicializadora](#função-inicializadora)
+- [Vídeo que comprova plenamente o funcionamento do sistema criado](#vídeo-que-comprova-plenamente-o-funcionamento-do-sistema-criado)
     
 # Atividade ponderada semana 05
 
