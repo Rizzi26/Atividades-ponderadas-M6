@@ -246,7 +246,7 @@ Pressione 'Q' para parar o robô e sair.
 
 # Vídeo que comprova plenamente o funcionamento do sistema criado:
 
-[![Vídeo que comprova plenamente o funcionamento do sistema criado](https://img.youtube.com/vi/oIXDkfXu6jc/0.jpg)](https://www.youtube.com/watch?v=oIXDkfXu6jc)
+[![Vídeo que comprova plenamente o funcionamento do sistema criado](https://img.youtube.com/vi/oIXDkfXu6jc/0.jpg)](https://youtu.be/YAQR5O36W9Y)
 
 
 
