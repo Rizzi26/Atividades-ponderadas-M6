@@ -1,3 +1,14 @@
+# Navegação
+
+- [Configuração do ambiente virtual para rodar a atividade](#configuração-do-ambiente-virtual-para-rodar-a-atividade)
+- [Configuração do pacote python](#configuração-do-pacote-python)
+- [Rodando meu pacote em seu computador](#rodando-meu-pacote-em-seu-computador)
+- [Explicação do código e suas principais funções](#explicação-do-código-e-suas-principais-funções)
+  - [Imports](#imports)
+  - [Class TurtleBot: Interação com o robô](#class-turtlebot-interação-com-o-robô)
+  - [Execução do pacote](#execução-do-pacote)
+  - [Função inicializadora](#função-inicializadora)
+    
 # Atividade ponderada semana 05
 
 &emsp;Objetivo: Construir uma CLI (Command line interface) para operar o robô, utilizando os principais serviços do ROS2 para demonstrar as habilidades aprendidas durante as instruções até o momento.
