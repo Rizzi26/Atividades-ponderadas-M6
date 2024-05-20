@@ -53,10 +53,7 @@ class TurtleBot(Node):
             elif key.char == 'q':
                 self.emergency_stop()
                 self.connected = False
-                self.destroy_node()
-                rclpy.shutdown()
                 self.stop_robot_client()
-                exit()
 
         except AttributeError:
             pass
@@ -105,12 +102,17 @@ class TurtleBot(Node):
     def stop_robot_client(self):
         print("Chamando o serviço para parar o robô...")
         client = self.create_client(Empty, 'stop_robot')
-        while not client.wait_for_service(timeout_sec=1.0):
-            self.get_logger().info('Serviço não disponível, esperando novamente...')
-        request = Empty.Request()
-        future = client.call_async(request)
-        rclpy.spin_until_future_complete(self, future)
-        self.get_logger().info('Serviço chamado com sucesso.')
+        if client.wait_for_service(timeout_sec=0.1):
+            request = Empty.Request()
+            future = client.call_async(request)
+            rclpy.spin_until_future_complete(self, future)
+            self.get_logger().info('Serviço chamado com sucesso.')
+        else:
+            self.get_logger().info('Serviço não disponível.')
+        self.destroy_node()
+        rclpy.shutdown()
+        exit()
+
 
 # Função principal para inicializar o robô e controlá-lo
 def main():

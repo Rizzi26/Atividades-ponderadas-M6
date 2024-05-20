@@ -173,12 +173,16 @@ class TurtleBot(Node):
     def stop_robot_client(self):
         print("Chamando o serviço para parar o robô...")
         client = self.create_client(Empty, 'stop_robot')
-        while not client.wait_for_service(timeout_sec=1.0):
-            self.get_logger().info('Serviço não disponível, esperando novamente...')
-        request = Empty.Request()
-        future = client.call_async(request)
-        rclpy.spin_until_future_complete(self, future)
-        self.get_logger().info('Serviço chamado com sucesso.')
+        if client.wait_for_service(timeout_sec=0.1):
+            request = Empty.Request()
+            future = client.call_async(request)
+            rclpy.spin_until_future_complete(self, future)
+            self.get_logger().info('Serviço chamado com sucesso.')
+        else:
+            self.get_logger().info('Serviço não disponível.')
+        self.destroy_node()
+        rclpy.shutdown()
+        exit()
 ```
 
 &emsp;Podemos observar importantes funções em nossa classe, tais como as de movimentação do robô e interação com a CLI:
@@ -191,11 +195,11 @@ class TurtleBot(Node):
 
 - `def update_moviment(self):` essa função é responsável por enviar ao nosso publisher, que em seguida trasnmite ao robô, a velociade linerar e angular em que ele deve se mover de acordo com a tecla pressionada.
 
-- `def emergency_stop(self):` essa função é chamada ao pressionarmos a tecla `Q` que aciona nosso sistema de emergência, ela zera a velociade do robô, tanto angular quanto linear e corta e destrói o nó que criamos para "conversar" com o robô. 
+- `def emergency_stop(self):` essa função é chamada ao pressionarmos a tecla `Q` que aciona nosso sistema de emergência, ela zera a velociade do robô, tanto angular quanto linear. 
 
 - `def display_status(self):` essa função é chamda a cada 0.1 segundos como definimos no nosso timer dentro da função `def __init__(sefl):`, ela limpa o terminal a cada 0.1 segundos e atualiza o status do roô (velocidade angular, linear e status de conexâo) assim, consegue evitar que os logs atrapalhem a visualização da nossa CLI e consegue transmitir em tempo real o statsu do robô.
 
-- `def stop_robot_client(self):` Este método chama um serviço chamado stop_robot para parar o robô.
+- `def stop_robot_client(self):` Este método chama um serviço chamado stop_robot para parar o robô para destruir o nó, ela verifica se há como se conectar ao um novo serviço em 0.1 segundos por chamada, caso não tenha nenhum disponível ele encerra o code.
 
 ### Execução do pacote
 
@@ -246,7 +250,11 @@ Pressione 'Q' para parar o robô e sair.
 
 # Vídeo que comprova plenamente o funcionamento do sistema criado:
 
-![Vídeo que comprova plenamente o funcionamento do sistema criado](https://youtu.be/YAQR5O36W9Y)
+&emsp;No vídeo eu rodo o simulador webots e depois rodo o meu pacote para interagir com o robô. Faço algumas movimentações, para frente 'W', para a direita 'D', para esquerda 'A' e para trás 'S', podemos ver que o status do robô é atualizado em tempo real ao pressionar as teclas e as velocidades angulares e lineares são alteradas. Ao fim, eu pressiono a tecla 'Q' para ativar o sistma de emergência do robô e fazer com que a aplicação pare, no terminal podemos ver que o status da conexão é perdida e aparece um print no "Chamando o serviço para parar o robô...", "Serviço não disponível." e code para de rodar no terminal.
+
+[![Vídeo que comprova plenamente o funcionamento do sistema criado](https://demura.net/wordpress/wp-content/uploads/2021/04/webot3.png)](https://youtu.be/YAQR5O36W9Y)
+
+
 
 
 
