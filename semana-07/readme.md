@@ -1,3 +1,24 @@
+# Sumário
+
+- [Atividade ponderada semana 05](#atividade-ponderada-semana-05)
+  - [Aviso](#aviso)
+  - [Tentando ir além](#tentando-ir-além)
+  - [Configuração do ambiente virtual para rodar a atividade](#configuração-do-ambiente-virtual-para-rodar-a-atividade)
+  - [Rodando meu servidor em seu computador](#rodando-meu-servidor-em-seu-computador)
+  - [Explicação do código e suas principais funções dentro do servidor (arquivo main.py)](#explicação-do-código-e-suas-principais-funções-dentro-do-servidor-arquivo-mainpy)
+    - [Imports](#imports)
+    - [Definindo Rotas e Eventos](#definindo-rotas-e-eventos)
+    - [Recepção e manuseio das imagens](#recepção-e-manuseio-das-imagens)
+    - [Resumo](#resumo)
+    - [Interação com o Robô](#integração-com-o-robô)
+  - [Iniciaçização do servidor](#inicialização-do-servidor)
+- [HTMl e JS utilizados (não vou incluir o CSS mas ele existe para o básico da estilização)](#html-e-js-utilizados-não-vou-incluir-o-css-mas-ele-existe-para-o-básico-da-estilização)
+  - [HTML](#html)
+    - [index.html](#indexhtml)
+    - [dois.html](#doishtml)
+  - [JS](#js)
+- [Vídeo e screenshots para comprovar o funcionamento da atividade](#vídeo-e-screenshots-para-comprovar-o-funcionamento-da-atividade)
+
 # Atividade ponderada semana 05
 
 &emsp;Objetivo: Construir uma interface gráfica e integrar uma câmera que pass pelo backend e retorna para o cliente, exibindo a latencia, taxa de processamento e taxa de transmissão de imagens.
