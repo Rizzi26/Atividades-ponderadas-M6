@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebSocket Video Stream</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.0/socket.io.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            var socket = io('/video');
+
+            socket.on('video_frame', function (data) {
+                console.log('Frame Recebido!');
+                var img = document.getElementById('videoFrame');
+                img.src = 'data:image/jpeg;base64,' + data.data;
+            });
+
+            socket.on('video_end', function (data) {
+                console.log(data.data);
+            });
+        });
+    </script>
+</head>
+<body>
+    <img id="videoFrame" src="">
+    <h2>Streaming Video</h2>
+</body>
+</html>

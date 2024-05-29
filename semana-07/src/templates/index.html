@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webcam Video Stream</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.0/socket.io.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+<body>
+    <div class="main">
+        <div class="container">
+            <div class="video-container">
+                <h2>Webcam Video Stream</h2>
+                <video id="video" width="640" height="480" autoplay></video>
+            </div>
+            <div class="controls">
+                <button onclick="moveFoward()">Mover para frente</button>
+                <button onclick="moveBackward()">Mover para trás</button>
+                <button onclick="moveLeft()">Mover para esquerda</button>
+                <button onclick="moveRight()">Mover para direita</button>
+                <button class="emergency" onclick="stop()">Botão de emergência</button>
+            </div>
+        </div>
+        <div class="controls2">
+            <h2>Received Image:</h2>
+            <img id="receivedImage" src="" alt="Received Image" style="max-width: 100%;">
+            <p id="latency">Latency: N/A</p>
+            <p id="webcamLatency">Webcam Latency: N/A</p>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/websocket.js') }}"></script>
+</body>
+</html>
