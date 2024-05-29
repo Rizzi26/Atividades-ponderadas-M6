@@ -526,11 +526,11 @@ function stop() {
 
 &emsp;O vídeo foi gravado utilizando o meu celular, pois ao gravar a tela do computador comprometia a taxa de transmissão de quadros por segundo para o servidor
 
-&emsp;Podemos observar que o robô responde aos comandos ao pressionarmos os botões de movimentação e ao pressionar o botão de emergência o robô não recebe mais nenhum comando dali em diante, pois seu serviço foi "morto"
+&emsp;Podemos observar que o robô responde aos comandos ao pressionarmos os botões de movimentação e ao pressionar o botão de emergência o robô não recebe mais nenhum comando dali em diante, pois seu serviço foi "morto". **Clique no template abaixo** para ser redirecionado para o **YouTube e reproduzir o vídeo**:
 
 [![Vídeo que comprova plenamente o funcionamento do sistema criado](https://demura.net/wordpress/wp-content/uploads/2021/04/webot3.png)](https://www.youtube.com/watch?v=3Mv0G3BFd6Y)
 
-&emsp;Como o vídeofoi gravado por uma camera externa (meu celular) tirei alguns prints enquanto o sistema era executado para melhor visualização:
+&emsp;Como o vídeo foi gravado por uma camera externa (meu celular) tirei alguns prints enquanto o sistema era executado para melhor visualização:
 
 &emsp;1 - Frame sendo recebido no backend:
 
