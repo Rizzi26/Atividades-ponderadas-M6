@@ -250,7 +250,7 @@ Pressione 'Q' para parar o robô e sair.
 
 # Vídeo que comprova plenamente o funcionamento do sistema criado:
 
-&emsp;No vídeo eu rodo o simulador webots e depois rodo o meu pacote para interagir com o robô. Faço algumas movimentações, para frente 'W', para a direita 'D', para esquerda 'A' e para trás 'S', podemos ver que o status do robô é atualizado em tempo real ao pressionar as teclas e as velocidades angulares e lineares são alteradas. Ao fim, eu pressiono a tecla 'Q' para ativar o sistma de emergência do robô e fazer com que a aplicação pare, no terminal podemos ver que o status da conexão é perdida e aparece um print no "Chamando o serviço para parar o robô...", "Serviço não disponível." e code para de rodar no terminal.
+&emsp;No vídeo eu rodo o simulador webots e depois rodo o meu pacote para interagir com o robô. Faço algumas movimentações, para frente 'W', para a direita 'D', para esquerda 'A' e para trás 'S', podemos ver que o status do robô é atualizado em tempo real ao pressionar as teclas e as velocidades angulares e lineares são alteradas. Ao fim, eu pressiono a tecla 'Q' para ativar o sistma de emergência do robô e fazer com que a aplicação pare, no terminal podemos ver que o status da conexão é perdida e aparece um print no "Chamando o serviço para parar o robô...", "Serviço não disponível." e code para de rodar no terminal. **CLIQUE NA IMAGEM PARA SER REDIRECIONADO PARA O VÍDEO**
 
 [![Vídeo que comprova plenamente o funcionamento do sistema criado](https://demura.net/wordpress/wp-content/uploads/2021/04/webot3.png)](https://youtu.be/YAQR5O36W9Y)
 
