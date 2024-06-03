@@ -8,7 +8,6 @@ class MLP:
         self.lr = lr
         self.num_epochs = num_epochs
 
-        # Initialize weights and biases
         self.weights_01 = np.random.uniform(size=(num_input, num_hidden))
         self.weights_12 = np.random.uniform(size=(num_hidden, num_output))
         self.b01 = np.random.uniform(size=(1, num_hidden))

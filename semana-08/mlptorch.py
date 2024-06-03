@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 
-# Definir a rede MLP
+# rede MLP
 class MLP_torch(nn.Module):
     def __init__(self):
         super(MLP_torch, self).__init__()
@@ -27,7 +27,7 @@ target = torch.tensor([[0], [1], [1], [0]], dtype=torch.float32)
 # Inicializar o MLP
 mlp_torch = MLP_torch()
 
-# Definir a função de perda e o otimizador
+# função de perda e o otimizador
 criterion = nn.MSELoss()
 optimizer = optim.SGD(mlp_torch.parameters(), lr=0.2)
 
