@@ -1,0 +1,39 @@
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.titleprin {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.container2 {
+    display: flex;
+    font-size: 2rem;
+    gap: 1rem;
+}
+
+.input {
+    width: 50%;
+    background-color: rgb(255, 0, 0);
+}
+
+.output {
+    width: 50%;
+    background-color: rgb(13, 0, 134);
+}
+
+@media (max-width: 768px) {
+    .container2 {
+        flex-direction: column;
+    }
+    .input {
+        width: 100%;
+    }
+    .output {
+        width: 100%;
+    }
+}
