@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visão Computacional</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">
-    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
 </head>
 <body>
     <div class="main">
@@ -14,21 +12,35 @@
                 <h2>Aplicação prática de Redes Convolucionais</h2>
             </div>
             <div class="container2">
-                <div class="input">
-                    <div>
-                        <h1>Escolha uma imagem</h1>
+                <form action="/predict" method="post" enctype="multipart/form-data">
+                    <div class="input">
+                        <div>
+                            <h1>Escolha uma imagem</h1>
+                        </div>
+                        <div>
+                            <input type="file" name="image" accept="image/*" required />
+                        </div>
                     </div>
-                    <div>
-                        <input type="file" />
+                    <div class="output">
+                        <div>
+                            <h1>Escolha o modelo que você quer usar</h1>
+                            <div>
+                                <select name="model" required>
+                                    <option value="linear">Linear</option>
+                                    <option value="convolucional">Convolucional</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <button type="submit">Enviar</button>
+                        </div>
                     </div>
+                </form>
+                {% if prediction is not none %}
+                <div class="prediction-result">
+                    <h2>Resultado da Predição: {{ prediction }}</h2>
                 </div>
-                <div class="output">
-                    <div>
-                        <h1>Escolha o modelo que você quer usar</h1>
-                    </div>
-                    <div>
-                    </div>
-                </div>
+                {% endif %}
             </div>
         </div>
     </div>

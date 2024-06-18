@@ -2,3 +2,6 @@ install/
 build/
 log/
 venv/
+semana-08/src/mnist_train.csv
+semana-08/src/mnist_test.csv
+
