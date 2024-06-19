@@ -5,6 +5,7 @@
 - [Configuração do ambiente virtual para rodar a atividade](#configuração-do-ambiente-virtual-para-rodar-a-atividade)
 - [Rodando a atividade](#rodando-a-atividade)
 - [Vídeo comprovando pleno funcionamento da atividade](#vídeo-que-comprova-pleno-funcionamento-da-atividade)
+
 &emsp;Objetivo: Por meio de um modelo identificar algarismos que fizemos escrito na mão ao enviar para o servidor.
 
 # Configuração do ambiente virtual para rodar a atividade:
