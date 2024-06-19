@@ -11,15 +11,15 @@ app = Flask(__name__, template_folder='templates')
 if not os.path.exists('uploads'):
     os.makedirs('uploads')
 
-# Verificar se os modelos existem
-model_path = 'modelo_convulocional.h5'
+# Verifique se o modelo já existe
+model_path_conv = 'modelo_convulocional.h5'
 model_path_linear = 'modelo_linear.h5'
 
-if not os.path.exists(model_path):
-    print("Modelo Convulocional não encontrado. Treinando o modelo...")
+if not os.path.exists(model_path_conv):
+    print("Modelo Convolucional não encontrado. Treinando o modelo...")
     os.system('python3 train_convulocional.py')  # Comando para treinar o modelo
 else:
-    print(f"Carregando modelo Convulocional existente de {model_path}")
+    print(f"Carregando modelo Convolucional existente de {model_path_conv}")
 
 if not os.path.exists(model_path_linear):
     print("Modelo Linear não encontrado. Treinando o modelo...")
@@ -28,8 +28,8 @@ else:
     print(f"Carregando modelo Linear existente de {model_path_linear}")
 
 # Inicializar os modelos Convulocional e Linear
-model_convulocional = Convulocional(model_path)
-model_linear = LinearModel((784,), 10)  # Ajuste para inicializar o modelo linear
+model_convulocional = Convulocional(model_path_conv)
+model_linear = LinearModel((28, 28, 1), 10)  # Ajustar com o input_shape correto e num_classes
 
 @app.route('/')
 def index():
@@ -41,53 +41,41 @@ def predict():
         return render_template('index.html', prediction="Nenhuma imagem selecionada")
 
     file = request.files['image']
-    model_type = request.form['model']  # Obtém o tipo de modelo selecionado
 
     if file.filename == '':
         return render_template('index.html', prediction="Nenhuma imagem selecionada")
 
-    if file and model_type == 'convolucional':
-        # Salvar a imagem temporariamente
-        filepath = os.path.join('uploads', file.filename)
-        file.save(filepath)
+    chosen_model = request.form.get('model')  # Obter o modelo escolhido pelo usuário
 
-        # Ler e pré-processar a imagem
-        image = cv2.imread(filepath, cv2.IMREAD_GRAYSCALE)
-        image = cv2.resize(image, (28, 28))
-        image = image.reshape(1, 28, 28, 1)
-        image = image.astype('float32') / 255.0
-
-        # Fazer a predição usando o modelo Convulocional
-        prediction = model_convulocional.predict(image)
-
-        # Remover a imagem temporária
-        os.remove(filepath)
-
-        # Renderizar o template com o resultado da predição
-        return render_template('index.html', prediction=f'Predicted digit (Convolucional): {prediction}')
-
-    elif file and model_type == 'linear':
-        # Salvar a imagem temporariamente
-        filepath = os.path.join('uploads', file.filename)
-        file.save(filepath)
-
-        # Ler e pré-processar a imagem
-        image = cv2.imread(filepath, cv2.IMREAD_GRAYSCALE)
-        image = cv2.resize(image, (28, 28))
-        image = image.reshape(1, 784)  # Transforma a imagem em um vetor de 784 elementos
-        image = image.astype('float32') / 255.0
-
-        # Fazer a predição usando o modelo Linear
-        prediction = model_linear.predict(image)
-
-        # Remover a imagem temporária
-        os.remove(filepath)
-
-        # Renderizar o template com o resultado da predição
-        return render_template('index.html', prediction=f'Predicted digit (Linear): {prediction[0]}')
-
+    if chosen_model == 'linear':
+        model_to_use = model_linear  # Usar o modelo Linear
     else:
-        return render_template('index.html', prediction="Modelo não selecionado ou inválido")
+        model_to_use = model_convulocional  # Usar o modelo Convolucional
+
+    if file:
+        # Salvar a imagem temporariamente
+        filepath = os.path.join('uploads', file.filename)
+        file.save(filepath)
+
+        # Ler e pré-processar a imagem
+        image = cv2.imread(filepath, cv2.IMREAD_GRAYSCALE)
+        image = cv2.resize(image, (28, 28))
+        image = image.reshape(1, 28, 28, 1)  
+        image = image.astype('float32') / 255.0
+
+        # Fazer a predição usando o modelo selecionado
+        prediction = model_to_use.predict(image)
+
+        # Remover a imagem temporária
+        os.remove(filepath)
+
+        # Renderizar o template com o resultado da predição
+        if chosen_model == 'linear':
+            return render_template('index.html', prediction=f'Predicted digit (Linear): {prediction}')
+        else:
+            return render_template('index.html', prediction=f'Predicted digit (Convolucional): {prediction}')
+
+    return render_template('index.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

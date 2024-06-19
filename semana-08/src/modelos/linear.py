@@ -1,4 +1,5 @@
 import tensorflow as tf
+import numpy as np
 
 class LinearModel:
     def __init__(self, input_shape, num_classes):
@@ -15,4 +16,6 @@ class LinearModel:
 
     def predict(self, x):
         predictions = self.model.predict(x)
-        return predictions
+        predicted_digit = np.argmax(predictions)
+
+        return predicted_digit
